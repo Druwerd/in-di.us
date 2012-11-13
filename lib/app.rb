@@ -1,6 +1,6 @@
 require 'json'
 
-class MHDApp < Sinatra::Application
+class App < Sinatra::Application
 
   def ensure_connections
     # connect to DB here

@@ -1,4 +1,4 @@
-class MHDApp
+class App
   get '/resource.html' do
     erb :'resource'
   end

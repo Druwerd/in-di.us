@@ -11,6 +11,6 @@ RSpec.configure do |conf|
 end
 
 def app
-  MHDApp
+  App
 end
 
