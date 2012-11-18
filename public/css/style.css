@@ -9,6 +9,15 @@ h1{
   letter-spacing:3px
 }
 
+#featured-app{
+  width: 520px;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
 #newsletter-form{
-  width: 400px;
+  width: 520px;
+  text-align: center;
+  margin-left: auto ;
+  margin-right: auto ;
 }
