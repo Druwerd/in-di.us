@@ -6,6 +6,4 @@
   = haml :bandmate_flyer
   
 %div{:id => "newsletter-form"}
-  %form(action='/newsletter_singup' method='POST')
-    %input(type='email' required name='email')
-    %input(type='submit')
+  = erb(:mailchimp_form)
