@@ -28,11 +28,31 @@ h1{
   margin-right: auto ;
 }
 
+
+#social-links { 
+  height: 400px;
+  width: 661px;
+  padding: 5px 0 5px 0;
+}
+
+#social-links a { 
+  width: 252px; 
+  height: 105px; 
+  text-indent: -99999em; 
+  float: left;
+  background-position: -5px -80px;
+  padding: 0 10px 0 0;
+}
+
+.label-fb a { background: url("/images/facebook-label.png") top left no-repeat; }
+.label-twitter a { background: url("/images/twitter-label.png") top left no-repeat; }
+
 #newsletter-form{
   width: 511px;
   text-align: center;
   margin-left: auto ;
   margin-right: auto ;
+  padding: 40px 0 0 0;
 }
 
 #footer{
