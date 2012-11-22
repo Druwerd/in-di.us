@@ -19,6 +19,10 @@ class App < Sinatra::Application
   after do
     halt_with_errors! if errors?
   end
+  
+  not_found do
+    haml :not_found
+  end
 
 end
 

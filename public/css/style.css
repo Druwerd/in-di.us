@@ -1,3 +1,13 @@
+.center {
+  width: 511px;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.error{
+  padding: 40px 0 20px 0;
+}
+
 #header {
   background-color: #030705;
 }
@@ -31,7 +41,6 @@ h1{
 
 #social-links { 
   height: 400px;
-  width: 661px;
   padding: 5px 0 5px 0;
 }
 

@@ -19,5 +19,6 @@
       })();
   %body
     = haml :header
-    = yield
-    = haml :footer
+    %div{:id => "wrapper", :class => "center"}
+      = yield
+      = haml :footer
