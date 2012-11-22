@@ -1,25 +1,4 @@
 = erb :facebook_sdk
-
-%div{:id => "header"}
-  %div{:id => "header-pat"}
-    %div{:id => "header-top"}
-      %div{:id => "header-icons"}
-      /
-        %div{:class => "btn-fb"}
-          %a{:href => "http://www.facebook.com/pages/In-di/392390397510261"} FACEBOOK
-        %div{:class => "btn-twitter"}
-          %a{:href => "http://twitter.com"} TWITTER
-      %h1{:id => "main-title", :class => "bebas", :title => "in-di.us"}
-        %a{:href => "/"}in-di.us
-      %p{:id => "tag-line"} independent mobile apps
-    %div{:id => "header-end"}
-      %div{:id => "header-bot"}
-      /
-        %div{:id => "nav"}
-          %a{:href => "#"}apps
-          %a{:href => "#"}about
-      %div{:id => "header-cap"}
-    %div{:class => "clear"}
   
 %div{:id => "featured-app"}
   = haml :bandmate_flyer
@@ -28,5 +7,3 @@
   %h1{:id => "signup-title"} Get BandMate
   %p Sign up for more info about BandMate
   = erb(:mailchimp_form)
-  
-%div{:id => "footer"}
