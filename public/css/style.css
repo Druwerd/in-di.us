@@ -70,3 +70,25 @@ h1{
 #footer{
   padding: 40px 0 40px 0;
 }
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  #header-top{
+    padding: 20px 0 0 20px;
+  }
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  
+}
