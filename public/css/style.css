@@ -90,5 +90,24 @@ h1{
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  .center {
+    width: 440px;
+    margin-left: auto ;
+    margin-right: auto ;
+  }
   
+  #featured-app{
+    width: 75%;
+    height: 100%;
+  }
+  
+  #social-links { 
+    height: 100%;
+    padding: 5px 0 5px 0;
+  }
+  
+  #newsletter-form{
+    width: 75%;
+    padding: 10px 0 0 0;
+  }
 }
