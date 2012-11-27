@@ -1,9 +1,10 @@
-= erb :facebook_sdk
+%div{:id => "wrapper", :class => "center"}
+  = erb :facebook_sdk
   
-%div{:id => "featured-app"}
-  = haml :bandmate_flyer
+  %div{:id => "featured-app"}
+    = haml :bandmate_flyer
   
-%div{:id => "newsletter-form"}
-  %h1{:id => "signup-title"} Get BandMate
-  %p Sign up for a custom demo of your app
-  = erb(:mailchimp_form)
+  %div{:id => "newsletter-form"}
+    %h1{:id => "signup-title"} Get BandMate
+    %p Sign up for a custom demo of your app
+    = erb(:mailchimp_form)
