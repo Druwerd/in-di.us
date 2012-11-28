@@ -12,6 +12,10 @@
   background-color: #030705;
 }
 
+#header-top{
+  padding: 40px 0 20px 40px;
+}
+
 #header-bot {
   padding: 0 0 0 190px;
   
@@ -70,6 +74,10 @@ h1{
 #footer{
   padding: 40px 0 40px 0;
 }
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
 
 /* Large desktop */
 @media (min-width: 1200px) {
