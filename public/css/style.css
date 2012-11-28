@@ -274,6 +274,10 @@ h1{
   .carousel-caption .btn {
     font-size: 18px;
   }
+  
+  .featurette {
+    padding-top: 60px;
+  }
 
   .featurette-heading {
     font-size: 30px;
