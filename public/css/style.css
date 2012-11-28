@@ -27,7 +27,6 @@
 }
 
 .carousel-caption {
-  max-width: 550px;
   padding: 0 20px 20px 40px;
   margin-bottom: 0px;
 }
@@ -215,7 +214,6 @@ h1{
     height: 300px;
   }
   .carousel-caption {
-    width: 65%;
     padding: 0 70px 10px 40px;
     margin-bottom: 0;
   }
@@ -266,8 +264,6 @@ h1{
     height: 300px;
   }
   .carousel-caption {
-    width: 65%;
-    max-width: 300px;
     margin-bottom: 0;
     position: absolute;
   }
