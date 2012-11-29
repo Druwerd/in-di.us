@@ -8,4 +8,14 @@ class App
     @description = "List of mobile apps created by in-di.us"
     haml :apps
   end
+  
+  get "/about" do
+    @description = "About in-di.us"
+    haml :about
+  end
+  
+  get "/contact" do
+    @description = "Contact information"
+    haml :contact
+  end
 end
