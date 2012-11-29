@@ -1,3 +1,12 @@
+body {
+  padding-top: 140px;
+  padding-bottom: 40px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
 /* Carousel base class */
 .carousel {
   margin-bottom: 60px;
@@ -92,7 +101,7 @@
 }
 
 #header-title{
-  padding-top: 40px;
+  padding-top: 25px;
 }
 
 #header-bot {
@@ -154,14 +163,17 @@
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-  
+  .navbar-fixed-top {
+    margin-bottom: 0;
+    position: fixed;
+  }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
   
   #header-title{
-    padding-left: 10px;
+    padding-left: 40px;
   }
   
   #featured-app{
@@ -179,8 +191,13 @@
     padding: 10px 0 0 0;
   }
   
+  .navbar-fixed-top {
+    margin-bottom: 0;
+    position: fixed;
+  }
+  
   .navbar-inner {
-    margin: -20px;
+    margin: 0;
   }
 
   .carousel {
@@ -227,6 +244,12 @@
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  
+
+  
+  .navbar-inner {
+    margin: 0;
+  }
   
   .carousel {
     margin-left: -20px;

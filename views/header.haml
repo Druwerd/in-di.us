@@ -1,5 +1,5 @@
 
-%div{:id => "header"}
+%div{:id => "header", :class => "navbar-fixed-top"}
   %div{:id => "header-pat"}
     %div{:id => "header-title"}
       %div.container
@@ -9,12 +9,20 @@
               %a{:href => "/"}in-di.us
             %p{:id => "tag-line"} independent mobile apps
           %div.span3
-        
+    .navbar.navbar-inverse
+      .navbar-inner
+        .container
+          %ul.nav
+            %li.divider-vertical
+            %li
+              %a{:href => "/"} Home
+            %li.divider-vertical
+            %li
+              %a{:href => "apps"} Apps
+            %li.divider-vertical
+            %li
+              %a{:href => "about"} About
+            %li.divider-vertical
+              %a{:href => "contact"} Contact
     %div{:id => "header-end"}
-      %div{:id => "header-bot"}
-      /
-        %div{:id => "nav"}
-          %a{:href => "#"}apps
-          %a{:href => "#"}about
-      %div{:id => "header-cap"}
     %div{:class => "clear"}
