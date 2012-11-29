@@ -5,7 +5,7 @@
 @font-face {
     /* This declaration targets Internet Explorer */
     font-family: 'BebasNeueRegular';
-    src: url('http://static.tumblr.com/ts2nqrf/N4Plq3ugg/bebasneue-webfont.eot');
+    src: url('/fonts/bebasneue-webfont.eot');
 }
 
 @font-face {
