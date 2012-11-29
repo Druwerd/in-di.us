@@ -1,10 +1,22 @@
-%div{:id => "wrapper", :class => "center"}
+%div.container
   = erb :facebook_sdk
   
-  %div{:id => "featured-app"}
-    = haml :bandmate_flyer
+  %div.row
+    %div.span3
   
-  %div{:id => "newsletter-form"}
-    %h1{:id => "signup-title"} Get BandMate
-    %p Sign up for a custom demo of your app
-    = erb(:mailchimp_form)
+    %div.span6
+      %div{:id => "featured-app", :class => "container center"}
+        = haml :bandmate_flyer
+  
+    %div.span3
+  
+  %div.row
+    %div.span3
+    
+    %div.span6
+      %div{:id => "newsletter-form", :class => "container center"}
+        %h1{:id => "signup-title"} Get BandMate
+        %p Sign up for a custom demo of your app
+        = erb(:mailchimp_form)
+    
+    %div.span3

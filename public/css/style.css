@@ -78,11 +78,6 @@
       border-bottom: 1px none white;
     }
 
-.center {
-  width: 511px;
-  margin-left: auto ;
-  margin-right: auto ;
-}
 
 .error{
   padding: 40px 0 20px 0;
@@ -93,7 +88,11 @@
 }
 
 #header-top{
-  padding: 40px 0 20px 40px;
+  /*padding: 40px 0 20px 40px; */
+}
+
+#header-title{
+  padding-top: 40px;
 }
 
 #header-bot {
@@ -106,26 +105,18 @@
   padding: 0 20px 0 0;
 }
 
-h1{
-  letter-spacing:3px
-}
-
 #tag-line{
   color: #CCC;
-  padding: 15px 0 10px 0;
+  padding: 5px 0 10px 0;
 }
 
 #featured-app{
-  padding: 80px 0 20px 0;
-  width: 511px;
-  height: 700px;
-  margin-left: auto ;
-  margin-right: auto ;
+  padding: 40px 0 20px 0;
+  width: 100%;
 }
 
 
-#social-links { 
-  height: 400px;
+#social-links {
   padding: 5px 0 5px 0;
 }
 
@@ -144,10 +135,7 @@ h1{
 #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
 
 #newsletter-form{
-  width: 511px;
-  text-align: center;
-  margin-left: auto ;
-  margin-right: auto ;
+  width: 100%;
   padding: 40px 0 0 0;
 }
 
@@ -171,14 +159,9 @@ h1{
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-  .center {
-    width: 500px;
-    margin-left: auto ;
-    margin-right: auto ;
-  }
   
-  #header-top{
-    padding: 20px 0 0 20px;
+  #header-title{
+    padding-left: 10px;
   }
   
   #featured-app{
@@ -244,11 +227,6 @@ h1{
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-  .center {
-    width: 440px;
-    margin-left: auto ;
-    margin-right: auto ;
-  }
   
   .carousel {
     margin-left: -20px;
