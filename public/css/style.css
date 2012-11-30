@@ -249,7 +249,9 @@ body {
 /* Landscape phones and down */
 @media (max-width: 480px) {
   
-
+  #contact-us h1{
+    letter-spacing: -2px;
+  }
   
   .navbar-inner {
     margin: 0;
