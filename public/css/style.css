@@ -284,6 +284,15 @@ body {
   
   .featurette {
     padding-top: 60px;
+    padding-left: 5px;
+  }
+  
+  .featurette-image.pull-right {
+    margin-left: 5px;
+  }
+  
+  .featurette-image.pull-left {
+  margin-right: 5px;
   }
 
   .featurette-heading {
