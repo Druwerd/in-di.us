@@ -1,2 +1,5 @@
 %div{:id => "footer"}
   = erb :bootstrapp
+  
+- if @js
+  <script src="/js/#{@js}"></script>

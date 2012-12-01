@@ -8,6 +8,7 @@ class App
   get "/apps" do
     @title = "in-di.us - Independent Mobile Apps"
     @description = "List of mobile apps created by in-di.us"
+    @js = "apps.js"
     haml :apps
   end
   
