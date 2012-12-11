@@ -1,8 +1,9 @@
 class App
   get "/" do
     @title = "in-di.us - Independent Mobile Apps"
-    @description = "in-di.us provides independent mobile apps. We specialize in free customized apps for indie bands."
-    haml :index
+    @description = "in-di.us provides independent mobile apps. We specialize in free customized apps for bands."
+    @js = "apps.js"
+    haml :apps
   end
   
   get "/apps" do
