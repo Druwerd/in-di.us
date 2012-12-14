@@ -106,22 +106,13 @@ body {
     }
     .featurette {
       padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
-      padding-left: 40px;
+      padding-left: 90px;
+      padding-right: 60px;
       overflow: hidden; /* Vertically center images part 2: clear their floats. */
     }
     .featurette-image {
-      width: 40%;
-      padding-left: 80px;
-      padding-right: 80px;
+      width: 80%;
       margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
-    }
-
-    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-    .featurette-image.pull-left {
-      margin-right: 40px;
-    }
-    .featurette-image.pull-right {
-      margin-left: 40px;
     }
 
     /* Thin out the marketing headings */
@@ -130,6 +121,10 @@ body {
       font-weight: 300;
       line-height: 1;
       letter-spacing: -1px;
+    }
+    
+    .feature-list ul li{
+      padding-bottom: 10px;
     }
     
     hr {
@@ -268,7 +263,7 @@ body {
     margin-bottom: 0;
   }
   .carousel-caption h1 {
-    font-size: 30px;
+    font-size: 40px;
   }
   .carousel-caption .lead,
   .carousel-caption .btn {
@@ -284,7 +279,7 @@ body {
   }
 
   .featurette-heading {
-    font-size: 30px;
+    font-size: 40px;
   }
   .featurette .lead {
     font-size: 18px;
@@ -292,7 +287,7 @@ body {
   }
   
   .featurette-image {
-    margin-top: -10px;
+    margin-top: 40px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -327,7 +322,7 @@ body {
     position: absolute;
   }
   .carousel-caption h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
   .carousel-caption .lead,
   .carousel-caption .btn {
@@ -337,14 +332,7 @@ body {
   .featurette {
     padding-top: 60px;
     padding-left: 5px;
-  }
-  
-  .featurette-image.pull-right {
-    margin-left: 5px;
-  }
-  
-  .featurette-image.pull-left {
-  margin-right: 5px;
+    padding-right: 5px;
   }
 
   .featurette-heading {
@@ -357,7 +345,9 @@ body {
   }
   
   .featurette-image {
-    margin-top: -10px;
+    margin-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
 }
