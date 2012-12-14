@@ -7,20 +7,20 @@ class App
   end
   
   get "/apps" do
-    @title = "in-di.us - Independent Mobile Apps"
+    @title = "Independent Mobile Apps"
     @description = "List of mobile apps created by in-di.us"
     @js = "apps.js"
     haml :apps
   end
   
   get "/about" do
-    @title = "in-di.us - About Us"
+    @title = "About in-di.us"
     @description = "We are the best hackers alive."
     haml :about
   end
   
   get "/contact" do
-    @title = "in-di.us - Contact Us"
+    @title = "Contact Us"
     @description = "Contact information"
     haml :contact
   end
