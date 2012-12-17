@@ -147,6 +147,7 @@ body {
 
 #header-title{
   padding-top: 25px;
+  padding-left: 10px;
 }
 
 #header-bot {
@@ -203,7 +204,7 @@ body {
 
 /* Large desktop */
 @media (min-width: 1200px) {
-  
+
 }
  
 /* Portrait tablet to landscape and desktop */
