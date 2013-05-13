@@ -16,7 +16,7 @@
 	<div id="mce-responses" class="clear">
 		<div class="response" id="mce-error-response" style="display:none"></div>
 		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>	<div class="clear"><input type="submit" value="Sign Me Up!" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+	</div>	<div class="clear"><input type="submit" value="Sign Me Up!" name="subscribe" id="mc-embedded-subscribe" class="btn btn-large btn-primary"></div>
 </form>
 </div>
 <script type="text/javascript">
@@ -134,6 +134,9 @@ function mce_success_cb(resp){
         $('#mc-embedded-subscribe-form').each(function(){
             this.reset();
     	});
+        $('.indicates-required').hide();
+        $('.mc-field-group').hide();
+        $('#mc-embedded-subscribe').hide();
     } else {
         var index = -1;
         var msg;

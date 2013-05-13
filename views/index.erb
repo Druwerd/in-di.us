@@ -1,3 +1,17 @@
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Sign Up To Get BandMate</h3>
+  </div>
+  <div class="modal-body">
+  	<p>We will contact you with more infomation about BandMate.<br />
+  		All information you provide will remain private.
+  	</p>
+    <%= erb :mailchimp_form %>
+  </div>
+</div>
+
 <div class="container marketing">
 <!-- START THE FEATURETTES -->
 
@@ -34,8 +48,7 @@
 		                <li>Earn ad revenue.</li>
 		              </ul>
 		            </div>
-		            <p class="lead">Contact us to get your FREE app.</p>
-		            <a class="btn btn-large btn-primary" href="mailto:BandMate@in-di.us">BandMate@in-di.us</a>
+		            <a href="#myModal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Get BandMate</a>
 	            </div>
 	        </div>
 	      </div>
