@@ -44,6 +44,8 @@
 
  		#header-cap { background: url("/images/bg.jpg") top left repeat; width: 100%; height: 18px; position: absolute; margin-top: -18px; left: 1010px}
  		#header-end { position:relative; width:100%; overflow:hidden}
+
+  #legal{text-align: center;}
  		
 
 body {
