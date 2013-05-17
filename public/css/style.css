@@ -269,4 +269,8 @@ body {
     padding-right: 5px;
   }
 
+  .hero-unit {
+    padding: 60px 35px 60px 35px;
+  }
+
 }
