@@ -6,13 +6,6 @@ class App
     haml :index
   end
   
-  get "/apps" do
-    @title = "Independent Mobile Apps"
-    @description = "List of mobile apps created by in-di.us"
-    @js = "apps.js"
-    haml :apps
-  end
-  
   get "/about" do
     @title = "About indi"
     @description = "We are the best hackers alive."
