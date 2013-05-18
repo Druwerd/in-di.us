@@ -8,3 +8,6 @@ CLEAN.include '*.log'
 namespace :test do
   RSpec::Core::RakeTask.new(:all)
 end
+
+desc "Run tests"
+task :default => "test:all"
