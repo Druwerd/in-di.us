@@ -26,40 +26,46 @@ module Facebook
 		CACHE_TIMEOUT = 60 * 60 # one hour
 		@@bands_list = []
 		@@bands_list_lastupdated = nil
+		@@bands_list_loading = false
 
 		def initialize
-			@max_size = 500
+			@max_size = 5000
 		end
 
 		def get_bands_list(refresh_data=false)
-			if refresh_data
-				get_bands_list_from_fb
-			else
-				@@bands_list = load_data_from_file
-			end
+			#@@bands_list = load_data_from_file
+			get_bands_list_from_fb #if refresh_data or @@bands_list.empty?
 			@@bands_list
 		end
 
 		private
 		def find_bands()
-			@@bands_list = []
+			bands_list = []
 			search_url="https://graph.facebook.com/search?fields=name&q=musician/band&type=page&limit=#{@max_size}"
 			search_results = GraphApiRequest.new(search_url).exec
-			
-			return @@bands_list if search_results['data'].empty?
-			@@bands_list += search_results['data']
-			@@bands_list_lastupdated = Time.now
-
-			@@bands_list
+			bands_list += search_results['data']
+			bands_list
 		end
 
 		def get_bands_list_from_fb
 			return @@bands_list if @@bands_list_lastupdated && (Time.now - @@bands_list_lastupdated) < CACHE_TIMEOUT
-			find_bands()
-			@@bands_list.each do |band|
-				band['info'] = Band.new(band['id']).get_info()
+			return @@bands_list if @@bands_list_loading
+			
+			Thread.new do
+				puts "execuing tread!"
+				@@bands_list_loading = true
+
+				bands = find_bands()
+				bands.each do |band|
+					puts band
+					band['info'] = Band.new(band['id']).get_info()
+				end
+				@@bands_list = bands.sort_by!{|b| b['info']['talking_about_count']}.reverse
+				@@bands_list_lastupdated = Time.now
+
+				@@bands_list_loading = false
+				puts "done"
 			end
-			@@bands_list = @@bands_list.sort_by!{|b| b['info']['talking_about_count']}.reverse
 			@@bands_list
 		end
 
@@ -69,7 +75,7 @@ module Facebook
 			JSON.parse data
 		rescue => e
 			puts e
-			nil
+			[]
 		end
 	end
 

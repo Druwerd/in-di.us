@@ -5,6 +5,8 @@
       %div.hero-unit
         %h1 Hot Bands
         %p
+          - if @bands.empty?
+            Loading... come back later.
           %ol
             - @bands.each do |band|
               %li 
