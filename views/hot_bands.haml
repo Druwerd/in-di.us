@@ -1,0 +1,14 @@
+%div.container
+  %div.row
+    %div.span1
+    %div.span10
+      %div.hero-unit
+        %h1 Hot Bands
+        %p
+          %ol
+            - @bands.each do |band|
+              %li 
+                %a{:href => band['info']['link'] }= band['name']
+                %span= "#{number_with_delimiter band['info']['talking_about_count']} talking about"
+    %div.span1
+
