@@ -32,9 +32,9 @@ module Facebook
 			@max_size = 5000
 		end
 
-		def get_bands_list(refresh_data=false)
-			#@@bands_list = load_data_from_file
-			get_bands_list_from_fb #if refresh_data or @@bands_list.empty?
+		def get_bands_list()
+			@@bands_list = load_data_from_file
+			#get_bands_list_from_fb if @@bands_list.empty?
 			@@bands_list
 		end
 
@@ -55,17 +55,22 @@ module Facebook
 				puts "execuing tread!"
 				@@bands_list_loading = true
 
-				bands = find_bands()
-				bands.each do |band|
-					puts band
-					band['info'] = Band.new(band['id']).get_info()
-				end
-				@@bands_list = bands.sort_by!{|b| b['info']['talking_about_count']}.reverse
-				@@bands_list_lastupdated = Time.now
+				get_get_bands_list_from_fb_now
 
 				@@bands_list_loading = false
 				puts "done"
 			end
+			@@bands_list
+		end
+
+		def get_get_bands_list_from_fb_now
+			bands = find_bands()
+			bands.each do |band|
+				puts band
+				band['info'] = Band.new(band['id']).get_info()
+			end
+			@@bands_list = bands.sort_by!{|b| b['info']['talking_about_count']}.reverse
+			@@bands_list_lastupdated = Time.now
 			@@bands_list
 		end
 

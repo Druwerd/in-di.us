@@ -13,7 +13,7 @@ namespace :facebook do
 	desc "Get Hot Bands Data from Facebook"
 	task :get_bands_data do
 		require File.join( File.dirname(__FILE__), 'lib', 'facebook_band.rb' )
-		facebook_data = Facebook::BandSearch.new().get_bands_list(true)
+		facebook_data = Facebook::BandSearch.new().send(:get_get_bands_list_from_fb_now)
 		File.open('public/data/fb_bands_data.json', 'w') do |f|
 			f << facebook_data.to_json
 		end
