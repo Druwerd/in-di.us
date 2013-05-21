@@ -68,7 +68,6 @@ module Facebook
 			return @@bands_list if loading_data?
 			
 			Thread.new do
-				puts "execuing tread!"
 				$REDIS.set('fb_bands_data_loading', 'true')
 
 				get_get_bands_list_from_fb_now
@@ -76,7 +75,6 @@ module Facebook
 				$REDIS.set('fb_bands_data_timestamp', Time.now.to_s)
 				$REDIS.set('fb_bands_data', @@bands_list.to_json)
 				$REDIS.set('fb_bands_data_loading', 'false')
-				puts "done"
 			end
 			@@bands_list
 		end
@@ -92,7 +90,6 @@ module Facebook
 		end
 
 		def load_data_from_redis
-			puts "LOADING FROM REDIS"
 			data = $REDIS.get('fb_bands_data')
 			@@bands_list_timestamp = last_fb_sync
 			@@bands_list = JSON.parse data
