@@ -1,10 +1,18 @@
 require 'json'
 require 'haml'
+require 'redis'
 
 class App < Sinatra::Application
 
   def ensure_connections
     # connect to DB here
+    case ENV['RACK_ENV']
+    when 'production'
+      uri = URI.parse(ENV["REDISCLOUD_URL"])
+      $REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+    else
+      $REDIS = Redis.new(:host => 'localhost', :port => 6379)
+    end
   end
 
   before do

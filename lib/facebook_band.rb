@@ -1,5 +1,6 @@
 require 'json'
 require 'rest_client'
+require 'time'
 
 module Facebook
 	class AppToken
@@ -25,20 +26,35 @@ module Facebook
 	class BandSearch
 		CACHE_TIMEOUT = 60 * 60 # one hour
 		@@bands_list = []
-		@@bands_list_lastupdated = nil
-		@@bands_list_loading = false
+		@@bands_list_timestamp = nil
 
 		def initialize
 			@max_size = 5000
 		end
 
 		def get_bands_list()
-			@@bands_list = load_data_from_file
-			#get_bands_list_from_fb if @@bands_list.empty?
+			return @@bands_list if !@@bands_list.empty? && fresh?
+			load_data_from_redis
+			get_bands_list_from_fb if @@bands_list.empty? || !fresh?
 			@@bands_list
 		end
 
 		private
+		def loading_data?
+			$REDIS.get('fb_bands_data_loading').to_s == 'true'
+		end
+
+		def last_fb_sync
+			Time.parse $REDIS.get('fb_bands_data_timestamp').to_s
+		rescue => e
+			puts e
+			nil
+		end
+
+		def fresh?
+			@@bands_list_timestamp && (Time.now - @@bands_list_timestamp) < CACHE_TIMEOUT
+		end
+
 		def find_bands()
 			bands_list = []
 			search_url="https://graph.facebook.com/search?fields=name&q=musician/band&type=page&limit=#{@max_size}"
@@ -48,16 +64,18 @@ module Facebook
 		end
 
 		def get_bands_list_from_fb
-			return @@bands_list if @@bands_list_lastupdated && (Time.now - @@bands_list_lastupdated) < CACHE_TIMEOUT
-			return @@bands_list if @@bands_list_loading
+			return @@bands_list if fresh?
+			return @@bands_list if loading_data?
 			
 			Thread.new do
 				puts "execuing tread!"
-				@@bands_list_loading = true
+				$REDIS.set('fb_bands_data_loading', 'true')
 
 				get_get_bands_list_from_fb_now
 
-				@@bands_list_loading = false
+				$REDIS.set('fb_bands_data_timestamp', Time.now.to_s)
+				$REDIS.set('fb_bands_data', @@bands_list.to_json)
+				$REDIS.set('fb_bands_data_loading', 'false')
 				puts "done"
 			end
 			@@bands_list
@@ -70,14 +88,14 @@ module Facebook
 				band['info'] = Band.new(band['id']).get_info()
 			end
 			@@bands_list = bands.sort_by!{|b| b['info']['talking_about_count']}.reverse
-			@@bands_list_lastupdated = Time.now
 			@@bands_list
 		end
 
-		def load_data_from_file
-			data_file = File.join( File.dirname(__FILE__), '..', 'public', 'data', 'fb_bands_data.json' )
-			data = File.open(data_file).read
-			JSON.parse data
+		def load_data_from_redis
+			puts "LOADING FROM REDIS"
+			data = $REDIS.get('fb_bands_data')
+			@@bands_list_timestamp = last_fb_sync
+			@@bands_list = JSON.parse data
 		rescue => e
 			puts e
 			[]
