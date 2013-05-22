@@ -9,6 +9,7 @@ GEM
     haml (3.1.7)
     kgio (2.8.0)
     mime-types (1.23)
+    newrelic_rpm (3.6.2.96)
     rack (1.5.2)
     rack-protection (1.3.2)
       rack
@@ -44,6 +45,7 @@ PLATFORMS
 DEPENDENCIES
   foreman
   haml
+  newrelic_rpm
   rack-test
   rake
   redis
