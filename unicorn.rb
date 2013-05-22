@@ -1,7 +1,7 @@
-TMP_DIR = File.join( File.expand_path( File.dirname(__FILE__) ), 'tmp' )
+#TMP_DIR = File.join( File.expand_path( File.dirname(__FILE__) ), 'tmp' )
 
 worker_processes 2
-working_directory File.dirname(__FILE__)
+#working_directory File.dirname(__FILE__)
 
 # This loads the application in the master process before forking
 # worker processes
@@ -13,13 +13,13 @@ timeout 30
 
 # This is where we specify the socket.
 # We will point the upstream Nginx module to this socket later on
-listen File.join( TMP_DIR, 'unicorn.sock' ), :backlog => 64
+#listen File.join( TMP_DIR, 'unicorn.sock' ), :backlog => 64
 
-pid File.join( TMP_DIR, 'unicorn.pid' )
+#pid File.join( TMP_DIR, 'unicorn.pid' )
 
 # Set the path of the log files inside the log folder of the testapp
-stderr_path File.join( TMP_DIR, "unicorn.stderr.log" )
-stdout_path File.join( TMP_DIR, "unicorn.stdout.log" )
+#stderr_path File.join( TMP_DIR, "unicorn.stderr.log" )
+#stdout_path File.join( TMP_DIR, "unicorn.stdout.log" )
 
 #before_fork do |server, worker|
 ## This option works in together with preload_app true setting
