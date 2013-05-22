@@ -6,13 +6,7 @@ class App < Sinatra::Application
 
   def ensure_connections
     # connect to DB here
-    case ENV['RACK_ENV']
-    when 'production'
-      uri = URI.parse(ENV["REDISCLOUD_URL"])
-      $REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
-    else
-      $REDIS = Redis.new(:host => 'localhost', :port => 6379)
-    end
+    $REDIS = Redis.new(:host => settings.redis_host, :port => settings.redis_port, :password => settings.redis_password)
   end
 
   before do
