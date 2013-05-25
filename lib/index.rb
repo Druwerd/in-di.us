@@ -21,8 +21,8 @@ class App
   end
 
   get "/hot-bands" do
-    @title = "indi"
-    @description = "List of the most talked about bands on Facebook"
+    @title = "Hot Bands"
+    @description = "A list of the most talked about bands and musical artists on Facebook"
 
     @bands = Facebook::BandSearch.new().get_bands_list
     haml :hot_bands
