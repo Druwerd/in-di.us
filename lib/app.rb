@@ -13,6 +13,7 @@ class App < Sinatra::Application
     ensure_connections
     response.headers['Cache-Control'] = 'public, max-age=604800'
     response.headers['Content-Language'] = 'en'
+    content_type :html, 'charset' => 'utf-8'
     
     @errors = {} # empty error response. see #after for how this gets handled.
   end

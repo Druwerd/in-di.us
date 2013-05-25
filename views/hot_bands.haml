@@ -10,7 +10,7 @@
           %ol
             - @bands.each do |band|
               %li 
-                %a{:href => band['info']['link'] }= band['name']
+                %a{:href => band['info']['link'] }=h band['name']
                 %span= "#{number_with_delimiter band['info']['talking_about_count']} talking about"
     %div.span1
 

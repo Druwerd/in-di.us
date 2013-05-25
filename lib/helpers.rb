@@ -1,4 +1,8 @@
 module Helpers
+  def h(text)
+    Rack::Utils.escape_html(text)
+  end
+  
   def number_with_delimiter(number, delimiter = ",", separator = ".")
     begin
       Float(number)
