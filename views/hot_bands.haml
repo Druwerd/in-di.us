@@ -4,13 +4,12 @@
     %div.span10
       %div.hero-unit
         %h1 Hot Bands
-        %p
-          - if @bands.empty?
-            Loading... come back later.
-          %ol
-            - @bands.each do |band|
-              %li 
-                %a{:href => band['info']['link'] }=h band['name']
-                %span= "#{number_with_delimiter band['info']['talking_about_count']} talking about"
+        - if @bands.empty?
+          Loading... come back later.
+        %ol
+          - @bands.each do |band|
+            %li 
+              %a{:href => band['info']['link'] }=h band['name']
+              %span= "#{number_with_delimiter band['info']['talking_about_count']} talking about"
     %div.span1
 
