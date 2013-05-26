@@ -1,6 +1,6 @@
 #TMP_DIR = File.join( File.expand_path( File.dirname(__FILE__) ), 'tmp' )
 
-worker_processes 2
+worker_processes 8
 #working_directory File.dirname(__FILE__)
 
 # This loads the application in the master process before forking
