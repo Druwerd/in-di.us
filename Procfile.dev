@@ -1,2 +1,2 @@
-web: unicorn
+web: bundle exec unicorn -p 8080 -c ./unicorn.rb
 redis: redis-server /usr/local/etc/redis.conf

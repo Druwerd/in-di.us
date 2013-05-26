@@ -1,5 +1,4 @@
 class App
-  include Helpers
 
   get "/" do
     @title = "indi - Independent Mobile Apps"

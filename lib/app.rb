@@ -2,7 +2,13 @@ require 'json'
 require 'haml'
 require 'redis'
 
+# load helpers and models
+Dir[ File.join( File.dirname(__FILE__), 'helpers', '*.rb') ].each { |f| require f }
+Dir[ File.join( File.dirname(__FILE__), 'models', '*.rb') ].each { |f| require f }
+
 class App < Sinatra::Application
+
+  include ::Helpers
 
   def ensure_connections
     # connect to DB here
@@ -32,5 +38,5 @@ class App < Sinatra::Application
 
 end
 
-# load in all of the other .rb files in this directory
-Dir[ File.join( File.dirname(__FILE__), '*.rb') ].each { |f| require f }
+# load controllers
+Dir[ File.join( File.dirname(__FILE__), 'controllers', '*.rb') ].each { |f| require f }

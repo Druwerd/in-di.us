@@ -47,6 +47,7 @@ module Facebook
 		def last_fb_sync
 			Time.parse $REDIS.get('fb_bands_data_timestamp').to_s
 		rescue => e
+			puts "KEEP CALM CARRY ON"
 			puts e
 			nil
 		end
@@ -68,15 +69,21 @@ module Facebook
 			return @@bands_list if loading_data?
 			
 			Thread.new do
-				puts "execuing tread!"
-				$REDIS.set('fb_bands_data_loading', 'true')
+				begin
+					puts "execuing tread!"
+					$REDIS.set('fb_bands_data_loading', 'true')
 
-				get_get_bands_list_from_fb_now
+					get_get_bands_list_from_fb_now
 
-				$REDIS.set('fb_bands_data_timestamp', Time.now.to_s)
-				$REDIS.set('fb_bands_data', @@bands_list.to_json)
-				$REDIS.set('fb_bands_data_loading', 'false')
-				puts "done"
+					$REDIS.set('fb_bands_data_timestamp', Time.now.to_s)
+					$REDIS.set('fb_bands_data', @@bands_list.to_json)
+				rescue => e
+					puts "FUCK ME"
+					puts e
+				ensure
+					$REDIS.set('fb_bands_data_loading', 'false')
+					puts "done"
+				end
 			end
 			@@bands_list
 		end
@@ -97,6 +104,7 @@ module Facebook
 			@@bands_list_timestamp = last_fb_sync
 			@@bands_list = JSON.parse data
 		rescue => e
+			puts "KEEP CALM CARRY ON"
 			puts e
 			[]
 		end
