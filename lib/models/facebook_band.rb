@@ -20,7 +20,7 @@ module Facebook
 		end
 
 		def exec
-			JSON.parse URI.escape(::RestClient.get(url))
+			JSON.parse ::RestClient.get(URI.escape(url))
 		end
 	end
 
