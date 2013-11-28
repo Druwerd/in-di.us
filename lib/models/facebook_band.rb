@@ -58,7 +58,7 @@ module Facebook
 
 		def find_bands()
 			bands_list = []
-			search_url="https://graph.facebook.com/search?fields=name&q=musician/band&type=page&limit=#{@max_size}"
+			search_url="https://graph.facebook.com/search?fields=name&q=musician/band&type=page&limit=#{@max_size}&access_token=#{$fb_access_token}"
 			search_results = GraphApiRequest.new(search_url).exec
 			bands_list += search_results['data']
 			bands_list
