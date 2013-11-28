@@ -1,6 +1,7 @@
 require 'json'
 require 'rest_client'
 require 'time'
+require 'uri'
 
 module Facebook
 	class AppToken
@@ -19,7 +20,7 @@ module Facebook
 		end
 
 		def exec
-			JSON.parse ::RestClient.get(url)
+			JSON.parse URI.escape(::RestClient.get(url))
 		end
 	end
 
