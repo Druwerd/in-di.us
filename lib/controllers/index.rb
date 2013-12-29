@@ -6,6 +6,12 @@ class App
     @js = "apps.js"
     haml :index
   end
+
+  get "/apps" do
+    @title = "Apps"
+    @description = "Apps by indi"
+    haml :apps
+  end
   
   get "/about" do
     @title = "About indi"
