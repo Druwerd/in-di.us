@@ -1,6 +1,10 @@
 .carousel .carousel-caption h4{
   font-family: Arial;
-  text-align: right;
+  text-align: center;
+}
+
+.carousel .carousel-control {
+  top: 95%;
 }
 
 .carousel .item p{
