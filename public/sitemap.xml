@@ -12,8 +12,8 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://in-di.us/hot-bands</loc>
-  <changefreq>hourly</changefreq>
+  <loc>http://in-di.us/apps</loc>
+  <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
